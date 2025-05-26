@@ -1,0 +1,15 @@
+{
+  "name": "agents",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "uv run python -m pytest -v tests/unit",
+    "integ": "uv run python -m pytest -v tests/integ",
+    "format": "uv run ruff format ./src ./tests",
+    "format:ci": "uv run ruff format --check ./src ./tests",
+    "lint": "uv run ruff check --fix ./src ./tests",
+    "lint:ci": "uv run ruff check ./src ./tests",
+    "typecheck": "uv run mypy ./src ./tests",
+    "generate-schema": "uv run python main.py"
+  }
+}

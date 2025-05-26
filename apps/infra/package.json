@@ -1,0 +1,32 @@
+{
+  "name": "infra",
+  "version": "0.1.0",
+  "bin": {
+    "infra": "bin/infra.js"
+  },
+  "scripts": {
+    "build": "tsc && cdk synth --all -q",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "biome format --write ./bin ./lib",
+    "format:ci": "biome format ./bin ./lib",
+    "lint": "biome check --write ./bin ./lib",
+    "lint:ci": "biome check ./bin ./lib",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "^22.0.1",
+    "@types/node": "22.14.1",
+    "aws-cdk": "2.1007.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.8.3",
+    "vitest": "^3.1.1"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-glue-alpha": "2.194.0-alpha.0",
+    "@cdklabs/generative-ai-cdk-constructs": "^0.1.301",
+    "aws-cdk-lib": "2.194.0",
+    "constructs": "^10.4.2",
+    "deploy-time-build": "^0.3.31"
+  }
+}

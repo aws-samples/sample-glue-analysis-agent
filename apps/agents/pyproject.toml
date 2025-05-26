@@ -1,0 +1,71 @@
+[project]
+name = "sales-analysis-agent"
+version = "0.1.0"
+description = "Sales Analysis Agent using Amazon Bedrock"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "aws-lambda-powertools>=3.10.0",
+    "boto3>=1.37.33",
+    "aws-xray-sdk>=2.14.0",
+    "pydantic>=2.11.3",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pytest>=8.3.5",
+    "pytest-mock>=3.14.0",
+    "ruff>=0.11.5",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 120
+fix = true
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle (E, W)
+    "F", # Pyflakes (F)
+    "I", # isort (I)
+    "D", # pydocstyle (D)
+    "B", # flake8-bugbear (B)
+    "A", # flake8-builtins (A)
+    "ANN", # flake8-annotations (ANN)
+    "BLE", # flake8-blind-except (BLE)
+    "LOG", # flake8-logging (LOG)
+    "INP", # flake8-no-pep420 (INP)
+    "PT",  # flake8-pytest-style (PT)
+    "COM812", # flake8-commas (COM) / Trailing comma missing
+    ]
+
+ignore = [
+    "D417", # documentation for every function parameter: for Google convention
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"test_*.py" = [
+    "D",
+    "S101",
+    "PLR2004" # Magic value used in comparison, consider replacing `3` with a constant variable
+]
+"__init__.py" = ["D"]
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = ["tests/unit","tests/integ"]
+
+[tool.mypy]
+exclude= [
+    'cdk.out'
+]

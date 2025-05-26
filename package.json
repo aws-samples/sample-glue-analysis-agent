@@ -1,0 +1,14 @@
+{
+  "name": "sales-analysis-agent",
+  "private": true,
+  "scripts": {},
+  "packageManager": "pnpm@10.4.1",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "turbo": "^2.5.0"
+  }
+}
