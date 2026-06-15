@@ -10,7 +10,7 @@ dependencies = [
     "aws-xray-sdk>=2.14.0",
     "pydantic>=2.11.3",
     "fastjsonschema>=2.21.1",
-    "requests>=2.32.3",
+    "requests>=2.33.0",
     "ulid-py>=1.1.0",
     "websocket-client>=1.8.0",
 ]
